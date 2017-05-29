@@ -18,6 +18,7 @@ C. Petrificus Totalus - the full body-bind curse - paralyzes an opponent.
 D. Aparcium - the revealing charm - use it to reveal the concealed.
 E. Stupefy - the stunning charm - renders victim unconscious (and ready for capture).
 
+Type “menu” to return to the main menu
 
 Explore the city:
 I. Central Station
@@ -26,12 +27,14 @@ III. Bank of New York
 IV. Ice Lake in Central Park
 V. Cathedral
 
+Raw_input = choose a location by roman numeral
+Type “menu” to return to the main menu
 
 NYCity_location: “Where do you want to go?”)
 
 Your suitcase of magical beasts:
 I. Billywig (accio)- native to Austrailia: small, speedy insect that causes levitation and giddiness when they sting.
-II. Bowtruckle (aparcium) - tree guardians found in the west of England, southern Germany, and in some Scandinavian forests. Small in size, bowtruckles are mostly peaceful and shy and generally won’t attack with their sharp fingers unless their tree is threatened.
+II. Bowtruckle (aparcium) - tree guardians found in the west of England, Southern Germany, and in some Scandinavian forests. Small in size, bowtruckles are mostly peaceful and shy and generally won’t attack with their sharp fingers unless their tree is threatened.
 III. Niffler (alohomora) - Small, cuddly, and affectionate yet completely destructive, nifflers are usually kept by goblins to search for treasure. While they’re excellent at finding anything that sparkles and glitters, they can quickly cause havoc. 
 IV. Erumpent (stupefy) - One of the more dangerous magical creatures on this list, erumpents are visually similar to a rhinoceros except they have an explosive horn on their heads. They’re native to Africa and are respected by African witches and wizards.
 V. Obscurus (Petrificus Totalus)- a type of magical parasite that forms when a wizard or witch suppresses their magical ability. It looks like an ash-colored, tendril-equipped cloud and thrashes anything and everything in its path. 
@@ -40,7 +43,9 @@ V. Obscurus (Petrificus Totalus)- a type of magical parasite that forms when a w
 If Suitcase_List = []: 
 	print “There’s nothing in here. Time to explore.”
 	
+Type “menu” to return to the main menu
 
+1 menu
 central_station_menu = “””
 I. Central Station
 You enter the New York’s bustling Center Station. Unbeknownst to the muggle crowds below, a Billywig whizzes overhead. 
@@ -52,11 +57,12 @@ C. Go somewhere else
 >>>”””
 
 //Ask user what spell to cast
-Central_Station_choice: raw_input()
+Central_Station_choice: raw_input(“”)
 If A == “accio” or “accio Billywig”:
 	print “you caught the Billywig! Bravo!”
 	Suitcase_List.append(Billywig())
 
+1 menu
 T&Q_Apartment_Menu:
 II. Tina & Queenie’s Apartment
 You walk into Tina’s home where she and her sister have made a beautiful candlelit dinner. You don’t see anything awry here and Tina looks quite lovely in her evening dress. 
@@ -77,9 +83,10 @@ If T&Q_Apartment_Choice == B
 
 Elif T&Q_Apartment_Choice == A 
 
+2 menus
 Bank_Menu = “””
 III. Bank of New York
-You step into the lobby of the historically ornate Bank of New York. High ceilings and marble columns make this place ooze gold and riches. Goblins guard the front desks but you can see many closed doors down snaking halls. 
+You step into the lobby of the historically ornate Bank of New York. High ceilings and marble columns make this place glitter. Goblins guard the front desks but you can see many closed doors down snaking halls. 
 
 What do you do? 
 A. Cast a spell!
@@ -91,6 +98,7 @@ If A: You aren’t close enough to any doors!
 B: You hear scratching in a locked vault.
 A: Alohomora: you found the Niffler! As you hold him upside down, a cascade of coins and jewelry rattle onto the floor. Best to get out of here ASAP before the goblins hear you!
 
+1 menu
 Ice_Lake_Menu = “””
 IV. Ice Lake in Central Park
 You wander through thick fog in New York’s famous Central Park. The thunder of hooves echoes over a frozen lake. As you step onto the icy surface, a furious erumpent with sharp horns charges out of the fog! 
@@ -101,12 +109,12 @@ B. Hold your ground. The erumpent will recognize you and remember your kindness.
 C. Run!
 >>>”””
 
-If Stupefy: “a blinding light emits from your wand and brings the erumpent to a screeching halt. You prop the suitcase on top before she can wake again. Good work!”
+If spell == ‘stupefy’: “a blinding light emits from your wand and brings the erumpent to a screeching halt. You prop the suitcase on top before she can wake again. Good work!”
 	Suitcase_List.append(Erumpent())
 //If any other spell
 Elif B: “Erumpents don’t have great memories; you lose consciousness on impact.”
 
-
+2 menus
 Cathedral_Menu = “””
 V. St. Patrick’s Cathedral
 You open the towering wooden doors of St. Patrick’s Cathedral. Rays of dim light peak through stained glass windows. Feint weeping can be heard from the alter. You see Credence standing there with his head down. 
@@ -132,7 +140,19 @@ B. Call Credence’s name! Wake up, Credence!
 C. Run!
 
 A. If Petrificus Totalus: the obscura screams as the charm envelopes it. You swipe it into your suitcase.
+
 B: No response; the obscura tears into you. All you hear are howls as everything grows dark.
 
-//Whenever user dies or time runs out
+
+//Whenever user dies: 
 Game over: Play again? Press “P” to play or “E” to exit
+
+time runs out: 
+‘Suddenly you feel a metal cuff lock onto your wrist. An auror! You are captured and sentenced to a life in the bowels of the Ministry of Magic.’
+
+beasts_in_suitcase = [‘billywig’, ‘bowtruckle’, ‘niffler’, ‘’]
+
+beast_dictionary = {
+‘billywig’:’Native to Austrailia: small, speedy insect that causes levitation and giddiness when they sting.’,
+
+
